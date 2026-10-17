@@ -1,0 +1,47 @@
+// Generated using `moon info`, DON'T EDIT IT
+package "username/higher_cat_alg/linear_logic"
+
+import {
+  "moonbitlang/core/debug",
+}
+
+// Values
+pub fn verify_mll_proof_net(Int, FixedArray[(Int, Int)], FixedArray[ParSwitch]) -> Bool
+
+// Errors
+
+// Types and methods
+pub(all) struct ChuDualPair {
+  primal : FixedArray[Int64]
+  dual : FixedArray[Int64]
+} derive(Eq, @debug.Debug)
+pub fn ChuDualPair::equal(Self, Self) -> Bool
+pub fn ChuDualPair::eval_pairing(Self) -> Int64
+pub fn ChuDualPair::not_equal(Self, Self) -> Bool
+pub fn ChuDualPair::perp(Self) -> Self
+pub fn ChuDualPair::to_repr(Self) -> @debug.Repr
+
+pub struct LinearLollipop[A, B]((A) -> B)
+pub fn[A, B] LinearLollipop::apply_linear(Self[A, B], LinearVal[A]) -> LinearVal[B]
+pub fn[A, B, C] LinearLollipop::cut_fuse(Self[A, B], Self[B, C]) -> Self[A, C]
+pub fn[A, B] LinearLollipop::new((A) -> B) -> Self[A, B]
+
+pub struct LinearVal[A](A) derive(Eq, @debug.Debug)
+pub fn[A] LinearVal::consume(Self[A]) -> A
+pub fn[A : Eq] LinearVal::equal(Self[A], Self[A]) -> Bool
+pub fn[A] LinearVal::mint(A) -> Self[A]
+pub fn[A : Eq] LinearVal::not_equal(Self[A], Self[A]) -> Bool
+pub fn[A : @debug.Debug] LinearVal::to_repr(Self[A]) -> @debug.Repr
+
+pub(all) struct ParSwitch {
+  conclusion : Int
+  left_premise : Int
+  right_premise : Int
+} derive(Eq, @debug.Debug)
+pub fn ParSwitch::equal(Self, Self) -> Bool
+pub fn ParSwitch::not_equal(Self, Self) -> Bool
+pub fn ParSwitch::to_repr(Self) -> @debug.Repr
+
+// Type aliases
+
+// Traits

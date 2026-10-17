@@ -1,0 +1,69 @@
+// Generated using `moon info`, DON'T EDIT IT
+package "username/higher_cat_alg/homotopy_dag"
+
+import {
+  "moonbitlang/core/debug",
+}
+
+// Values
+
+// Errors
+
+// Types and methods
+pub(all) struct CotangentComplex {
+  deg0_omega_rank : Int
+  deg_minus1_conormal_rank : Int
+  deg_minus2_syzygy_rank : Int
+} derive(Eq, @debug.Debug)
+pub fn CotangentComplex::equal(Self, Self) -> Bool
+pub fn CotangentComplex::is_quasi_smooth(Self) -> Bool
+pub fn CotangentComplex::not_equal(Self, Self) -> Bool
+pub fn CotangentComplex::to_repr(Self) -> @debug.Repr
+pub fn CotangentComplex::virtual_dimension(Self) -> Int
+
+pub(all) struct GradedMatrix {
+  rows : Int
+  cols : Int
+  data : FixedArray[Int64]
+} derive(Eq, @debug.Debug)
+pub fn GradedMatrix::add(Self, Self) -> Self
+pub fn GradedMatrix::apply_vec(Self, FixedArray[Int64]) -> FixedArray[Int64]
+pub fn GradedMatrix::equal(Self, Self) -> Bool
+pub fn GradedMatrix::identity(Int) -> Self
+pub fn GradedMatrix::is_zero(Self) -> Bool
+pub fn GradedMatrix::mul(Self, Self) -> Self
+pub fn GradedMatrix::not_equal(Self, Self) -> Bool
+pub fn GradedMatrix::sub(Self, Self) -> Self
+pub fn GradedMatrix::to_repr(Self) -> @debug.Repr
+pub fn GradedMatrix::zeros(Int, Int) -> Self
+
+pub(all) struct KoszulDerivedIntersection {
+  codim : Int
+  tor_ranks : FixedArray[Int]
+} derive(Eq, @debug.Debug)
+pub fn KoszulDerivedIntersection::classical_naive_multiplicity(Self) -> Int
+pub fn KoszulDerivedIntersection::equal(Self, Self) -> Bool
+pub fn KoszulDerivedIntersection::from_degeneracy(Int, Int, Int) -> Self
+pub fn KoszulDerivedIntersection::not_equal(Self, Self) -> Bool
+pub fn KoszulDerivedIntersection::serre_derived_multiplicity(Self) -> Int
+pub fn KoszulDerivedIntersection::to_repr(Self) -> @debug.Repr
+
+pub(all) struct StrongDeformationRetract {
+  dim_v : Int
+  dim_h : Int
+  d_v : GradedMatrix
+  d_h : GradedMatrix
+  inj_i : GradedMatrix
+  proj_p : GradedMatrix
+  homotopy_h : GradedMatrix
+} derive(Eq, @debug.Debug)
+pub fn StrongDeformationRetract::ainfinity_massey_m3(Self, (FixedArray[Int64], FixedArray[Int64]) -> FixedArray[Int64], FixedArray[Int64], FixedArray[Int64], FixedArray[Int64]) -> FixedArray[Int64]
+pub fn StrongDeformationRetract::equal(Self, Self) -> Bool
+pub fn StrongDeformationRetract::not_equal(Self, Self) -> Bool
+pub fn StrongDeformationRetract::perturb_via_hpl(Self, GradedMatrix, Int) -> Self
+pub fn StrongDeformationRetract::to_repr(Self) -> @debug.Repr
+pub fn StrongDeformationRetract::verify_axioms(Self) -> Bool
+
+// Type aliases
+
+// Traits

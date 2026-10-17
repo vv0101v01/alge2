@@ -1,0 +1,78 @@
+// Generated using `moon info`, DON'T EDIT IT
+package "username/higher_cat_alg/vect_top_topos"
+
+import {
+  "moonbitlang/core/debug",
+}
+
+// Values
+pub const MOD_P : Int64 = 998244353
+
+pub fn kronecker_bifunctor_apply(FixedArray[LinearEndo], FixedArray[Fp]) -> FixedArray[Fp]
+
+pub fn naive_kronecker_apply(FixedArray[LinearEndo], FixedArray[Fp]) -> FixedArray[Fp]
+
+pub fn universe_mask_for_size(Int) -> UInt64
+
+// Errors
+
+// Types and methods
+pub(all) struct AlexandrovSpace {
+  num_points : Int
+  upset : FixedArray[UInt64]
+  downset : FixedArray[UInt64]
+} derive(Eq, @debug.Debug)
+pub fn AlexandrovSpace::equal(Self, Self) -> Bool
+pub fn AlexandrovSpace::euler_characteristic_on_mask(Self, UInt64) -> Int
+pub fn AlexandrovSpace::from_relations(Int, FixedArray[(Int, Int)]) -> Self
+pub fn AlexandrovSpace::homotopy_core_mask(Self) -> UInt64
+pub fn AlexandrovSpace::not_equal(Self, Self) -> Bool
+pub fn AlexandrovSpace::to_repr(Self) -> @debug.Repr
+
+pub struct Fp(Int64) derive(Eq, @debug.Debug)
+pub fn Fp::add(Self, Self) -> Self
+pub fn Fp::equal(Self, Self) -> Bool
+pub fn Fp::inv(Self) -> Self
+pub fn Fp::mul(Self, Self) -> Self
+pub fn Fp::new(Int64) -> Self
+pub fn Fp::not_equal(Self, Self) -> Bool
+pub fn Fp::pow(Self, Int64) -> Self
+pub fn Fp::raw(Self) -> Int64
+pub fn Fp::sub(Self, Self) -> Self
+pub fn Fp::to_repr(Self) -> @debug.Repr
+
+pub(all) struct LinearEndo {
+  dim : Int
+  entries : FixedArray[Fp]
+} derive(Eq, @debug.Debug)
+pub fn LinearEndo::equal(Self, Self) -> Bool
+pub fn LinearEndo::not_equal(Self, Self) -> Bool
+pub fn LinearEndo::to_repr(Self) -> @debug.Repr
+
+pub struct SieveOmega(UInt64) derive(Eq, @debug.Debug)
+pub fn SieveOmega::bits(Self) -> UInt64
+pub fn SieveOmega::equal(Self, Self) -> Bool
+pub fn SieveOmega::join(Self, Self) -> Self
+pub fn SieveOmega::meet(Self, Self) -> Self
+pub fn SieveOmega::not_equal(Self, Self) -> Bool
+pub fn SieveOmega::to_repr(Self) -> @debug.Repr
+
+pub(all) struct ToposSite {
+  space : AlexandrovSpace
+  universe_mask : UInt64
+} derive(Eq, @debug.Debug)
+pub fn ToposSite::bottom(Self) -> SieveOmega
+pub fn ToposSite::equal(Self, Self) -> Bool
+pub fn ToposSite::generate_sieve(Self, UInt64) -> SieveOmega
+pub fn ToposSite::heyting_implies(Self, SieveOmega, SieveOmega) -> SieveOmega
+pub fn ToposSite::heyting_not(Self, SieveOmega) -> SieveOmega
+pub fn ToposSite::kripke_joyal_forces(Self, Int, SieveOmega) -> Bool
+pub fn ToposSite::lawvere_tierney_dense(Self, SieveOmega) -> SieveOmega
+pub fn ToposSite::new(AlexandrovSpace) -> Self
+pub fn ToposSite::not_equal(Self, Self) -> Bool
+pub fn ToposSite::to_repr(Self) -> @debug.Repr
+pub fn ToposSite::truth(Self) -> SieveOmega
+
+// Type aliases
+
+// Traits

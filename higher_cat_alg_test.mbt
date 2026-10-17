@@ -1,0 +1,26 @@
+///|
+test "Grand Unified Homotopy Type Theory (HoTT) Synthesis Pipeline (All 17 Theorems & Algorithms)" {
+  let report = @higher_cat_alg.run_unified_high_dim_breakthrough()
+  assert_eq(report.equiv_spectral_trace, 157L)
+  assert_eq(report.free_coyoneda_sum, 2334L)
+  assert_eq(report.flat_kan_contraction, 630L)
+  assert_eq(report.vect_kronecker_norm, 650L)
+  assert_eq(report.top_euler_characteristic, 1)
+  assert_true(report.topos_glivenko_verified)
+  assert_eq(report.linear_cut_free_output, (157L + 630L) * 3L)
+  assert_eq(report.homotopy_hpl_entry, 15L)
+  assert_eq(report.homotopy_massey_m3_head, 14L)
+  assert_eq(report.dag_serre_multiplicity, 5)
+  assert_eq(report.dag_virtual_dimension, 4)
+  assert_eq(report.groupoid_holonomy_rot, 10)
+  assert_true(report.two_group_interchange_ok)
+  assert_true(report.hott_cubical_kan_3d_ok)
+  assert_eq(report.hott_ua_sip_transport_val, ((10L ^ 23130L) + 700L) ^ 23130L)
+  assert_eq(report.hott_hit_bg_encoded_rot, 7)
+  assert_eq(report.hott_freudenthal_stable_rank, 1)
+  assert_eq(report.hott_svk_normal_form_val, 6)
+  assert_eq(report.hott_cohesive_disk_size, 3)
+
+  let summary = report.format_summary()
+  assert_true(summary.contains("[17] [HoTT 新定理]"))
+}

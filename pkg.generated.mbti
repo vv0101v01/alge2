@@ -1,0 +1,167 @@
+// Generated using `moon info`, DON'T EDIT IT
+package "username/higher_cat_alg"
+
+import {
+  "moonbitlang/core/debug",
+  "username/higher_cat_alg/functors",
+  "username/higher_cat_alg/higher_groupoid",
+  "username/higher_cat_alg/homotopy_dag",
+  "username/higher_cat_alg/hott_foundations",
+  "username/higher_cat_alg/linear_logic",
+  "username/higher_cat_alg/vect_top_topos",
+}
+
+// Values
+pub const COMPILE_TIME_KOSZUL_DIM_CODIM4 : Int = 16
+
+pub const COMPILE_TIME_SPECTRAL_SCALE : Int64 = 7985954824
+
+pub const HADAMARD_DIM : Int = 8
+
+pub const HADAMARD_DIM_LOG2 : Int = 3
+
+pub const I_ONE : Int = 1024
+
+pub const I_ZERO : Int = 0
+
+pub const MOD_P : Int64 = 998244353
+
+pub fn analyze_cohesive_hott_space(Int, FixedArray[UInt64], Int, (Int64, Int64, Int64)) -> @hott_foundations.CohesiveModalityProfile
+
+pub fn blakers_massey_excision_connectivity(Int, Int) -> Int
+
+pub fn compute_surface_2holonomy(Int, Int, FixedArray[@higher_groupoid.DihedralGauge], FixedArray[@higher_groupoid.DihedralGauge]) -> (@higher_groupoid.TwoGroupCell, @higher_groupoid.TwoGroupCell)
+
+pub fn cubical_hcomp_2d(@higher_groupoid.DihedralGauge, @higher_groupoid.DihedralGauge, @higher_groupoid.DihedralGauge) -> @higher_groupoid.DihedralGauge
+
+pub fn cubical_kan_fill_3d(@higher_groupoid.DihedralGauge, @higher_groupoid.DihedralGauge, @higher_groupoid.DihedralGauge, @higher_groupoid.DihedralGauge, @higher_groupoid.DihedralGauge, @higher_groupoid.DihedralGauge) -> (@higher_groupoid.DihedralGauge, @higher_groupoid.DihedralGauge)
+
+pub fn flat_kan_chain_contraction(FixedArray[@functors.WeightedEdge], FixedArray[@functors.WeightedEdge], FixedArray[@functors.WeightedEdge], Int) -> Int64
+
+pub fn[Gen] free_monoid_hom_power(FixedArray[Gen], (Gen) -> @functors.AffineEndo, Int64, Int64) -> @functors.AffineEndo
+
+pub fn freudenthal_suspension_stabilize(Int, Int, Int, Int) -> @hott_foundations.FreudenthalStability
+
+pub fn fwht_inplace(FixedArray[Int64], Bool) -> Unit
+
+pub fn hit_bg_decode(@higher_groupoid.DihedralGauge) -> FixedArray[@hott_foundations.HITLoopStep]
+
+pub fn hit_bg_encode(Int, FixedArray[@hott_foundations.HITLoopStep]) -> @higher_groupoid.DihedralGauge
+
+pub fn hit_torus_encode_winding(FixedArray[(Int, Int)]) -> (Int, Int)
+
+pub fn kronecker_bifunctor_apply(FixedArray[@vect_top_topos.LinearEndo], FixedArray[@vect_top_topos.Fp]) -> FixedArray[@vect_top_topos.Fp]
+
+pub fn lift_to_skeleton(@functors.PrimalConv[FixedArray[Int64]]) -> @functors.SpectralSkeleton[FixedArray[Int64]]
+
+pub fn naive_cubic_chain_contraction(FixedArray[@functors.WeightedEdge], FixedArray[@functors.WeightedEdge], FixedArray[@functors.WeightedEdge]) -> Int64
+
+pub fn naive_kronecker_apply(FixedArray[@vect_top_topos.LinearEndo], FixedArray[@vect_top_topos.Fp]) -> FixedArray[@vect_top_topos.Fp]
+
+pub fn naive_xor_convolution(FixedArray[Int64], FixedArray[Int64]) -> FixedArray[Int64]
+
+pub fn retract_from_skeleton(@functors.SpectralSkeleton[FixedArray[Int64]]) -> @functors.PrimalConv[FixedArray[Int64]]
+
+pub fn run_unified_high_dim_breakthrough() -> UnifiedSynthesisReport
+
+pub fn skeleton_compose_inplace(@functors.SpectralSkeleton[FixedArray[Int64]], @functors.SpectralSkeleton[FixedArray[Int64]]) -> @functors.SpectralSkeleton[FixedArray[Int64]]
+
+pub fn svk_amalgamated_normal_form(FixedArray[@hott_foundations.AmalgamatedSyllable]) -> Array[@hott_foundations.AmalgamatedSyllable]
+
+pub fn universe_mask_for_size(Int) -> UInt64
+
+pub fn verify_2group_interchange(@higher_groupoid.TwoGroupCell, @higher_groupoid.TwoGroupCell, @higher_groupoid.DihedralGauge, @higher_groupoid.DihedralGauge) -> (@higher_groupoid.TwoGroupCell, @higher_groupoid.TwoGroupCell)
+
+pub fn verify_action_groupoid_cardinality(Int, Int, (Int, Int) -> Int) -> (Int, Int, Int)
+
+pub fn verify_crossed_module_axioms(@higher_groupoid.DihedralGauge, @higher_groupoid.DihedralGauge, @higher_groupoid.DihedralGauge) -> Bool
+
+pub fn verify_mll_proof_net(Int, FixedArray[(Int, Int)], FixedArray[@linear_logic.ParSwitch]) -> Bool
+
+// Errors
+
+// Types and methods
+pub(all) struct UnifiedSynthesisReport {
+  equiv_spectral_trace : Int64
+  free_coyoneda_sum : Int64
+  flat_kan_contraction : Int64
+  vect_kronecker_norm : Int64
+  top_euler_characteristic : Int
+  topos_glivenko_verified : Bool
+  linear_cut_free_output : Int64
+  homotopy_hpl_entry : Int64
+  homotopy_massey_m3_head : Int64
+  dag_serre_multiplicity : Int
+  dag_virtual_dimension : Int
+  groupoid_holonomy_rot : Int
+  two_group_interchange_ok : Bool
+  hott_cubical_kan_3d_ok : Bool
+  hott_ua_sip_transport_val : Int64
+  hott_hit_bg_encoded_rot : Int
+  hott_freudenthal_stable_rank : Int
+  hott_svk_normal_form_val : Int
+  hott_cohesive_disk_size : Int
+} derive(Eq, @debug.Debug)
+pub fn UnifiedSynthesisReport::equal(Self, Self) -> Bool
+pub fn UnifiedSynthesisReport::format_summary(Self) -> String
+pub fn UnifiedSynthesisReport::not_equal(Self, Self) -> Bool
+pub fn UnifiedSynthesisReport::to_repr(Self) -> @debug.Repr
+
+// Type aliases
+pub using @functors {type AffineEndo}
+
+pub using @vect_top_topos {type AlexandrovSpace}
+
+pub using @hott_foundations {type AmalgamatedSyllable}
+
+pub using @linear_logic {type ChuDualPair}
+
+pub using @hott_foundations {type CohesiveModalityProfile}
+
+pub using @homotopy_dag {type CotangentComplex}
+
+pub using @functors {type Coyoneda}
+
+pub using @higher_groupoid {type DihedralGauge}
+
+pub using @vect_top_topos {type Fp}
+
+pub using @hott_foundations {type FreudenthalStability}
+
+pub using @higher_groupoid {type FundamentalGroupoidUF}
+
+pub using @homotopy_dag {type GradedMatrix}
+
+pub using @hott_foundations {type HITLoopStep}
+
+pub using @hott_foundations {type HalfAdjointEquiv}
+
+pub using @hott_foundations {type IntervalPt}
+
+pub using @homotopy_dag {type KoszulDerivedIntersection}
+
+pub using @vect_top_topos {type LinearEndo}
+
+pub using @linear_logic {type LinearLollipop}
+
+pub using @linear_logic {type LinearVal}
+
+pub using @linear_logic {type ParSwitch}
+
+pub using @functors {type PrimalConv}
+
+pub using @vect_top_topos {type SieveOmega}
+
+pub using @functors {type SpectralSkeleton}
+
+pub using @homotopy_dag {type StrongDeformationRetract}
+
+pub using @vect_top_topos {type ToposSite}
+
+pub using @higher_groupoid {type TwoGroupCell}
+
+pub using @functors {type WeightedEdge}
+
+pub using @functors {trait EquivFunctor}
+
+// Traits

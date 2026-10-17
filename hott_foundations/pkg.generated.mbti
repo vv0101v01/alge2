@@ -1,0 +1,92 @@
+// Generated using `moon info`, DON'T EDIT IT
+package "username/higher_cat_alg/hott_foundations"
+
+import {
+  "moonbitlang/core/debug",
+  "username/higher_cat_alg/higher_groupoid",
+}
+
+// Values
+pub const I_ONE : Int = 1024
+
+pub const I_ZERO : Int = 0
+
+pub fn analyze_cohesive_hott_space(Int, FixedArray[UInt64], Int, (Int64, Int64, Int64)) -> CohesiveModalityProfile
+
+pub fn blakers_massey_excision_connectivity(Int, Int) -> Int
+
+pub fn cubical_hcomp_2d(@higher_groupoid.DihedralGauge, @higher_groupoid.DihedralGauge, @higher_groupoid.DihedralGauge) -> @higher_groupoid.DihedralGauge
+
+pub fn cubical_kan_fill_3d(@higher_groupoid.DihedralGauge, @higher_groupoid.DihedralGauge, @higher_groupoid.DihedralGauge, @higher_groupoid.DihedralGauge, @higher_groupoid.DihedralGauge, @higher_groupoid.DihedralGauge) -> (@higher_groupoid.DihedralGauge, @higher_groupoid.DihedralGauge)
+
+pub fn freudenthal_suspension_stabilize(Int, Int, Int, Int) -> FreudenthalStability
+
+pub fn hit_bg_decode(@higher_groupoid.DihedralGauge) -> FixedArray[HITLoopStep]
+
+pub fn hit_bg_encode(Int, FixedArray[HITLoopStep]) -> @higher_groupoid.DihedralGauge
+
+pub fn hit_torus_encode_winding(FixedArray[(Int, Int)]) -> (Int, Int)
+
+pub fn svk_amalgamated_normal_form(FixedArray[AmalgamatedSyllable]) -> Array[AmalgamatedSyllable]
+
+// Errors
+
+// Types and methods
+pub(all) struct AmalgamatedSyllable {
+  side : Int
+  value : Int
+  in_amalgam_h : Bool
+} derive(Eq, @debug.Debug)
+pub fn AmalgamatedSyllable::equal(Self, Self) -> Bool
+pub fn AmalgamatedSyllable::not_equal(Self, Self) -> Bool
+pub fn AmalgamatedSyllable::to_repr(Self) -> @debug.Repr
+
+pub(all) struct CohesiveModalityProfile {
+  shape_pi0_components : Int
+  flat_discrete_points : Int
+  sharp_codiscrete_contractible : Bool
+  infinitesimal_disk_size_at_origin : Int
+  bianchi_curvature_identity_holds : Bool
+} derive(Eq, @debug.Debug)
+pub fn CohesiveModalityProfile::equal(Self, Self) -> Bool
+pub fn CohesiveModalityProfile::not_equal(Self, Self) -> Bool
+pub fn CohesiveModalityProfile::to_repr(Self) -> @debug.Repr
+
+pub(all) struct FreudenthalStability {
+  is_isomorphic_in_stable_range : Bool
+  is_epimorphic_boundary : Bool
+  stabilized_connectivity : Int
+  stable_homotopy_rank : Int
+} derive(Eq, @debug.Debug)
+pub fn FreudenthalStability::equal(Self, Self) -> Bool
+pub fn FreudenthalStability::not_equal(Self, Self) -> Bool
+pub fn FreudenthalStability::to_repr(Self) -> @debug.Repr
+
+pub(all) struct HITLoopStep {
+  generator : @higher_groupoid.DihedralGauge
+  inverted : Bool
+} derive(Eq, @debug.Debug)
+pub fn HITLoopStep::equal(Self, Self) -> Bool
+pub fn HITLoopStep::not_equal(Self, Self) -> Bool
+pub fn HITLoopStep::to_repr(Self) -> @debug.Repr
+
+pub(all) struct HalfAdjointEquiv[A, B] {
+  forward : (A) -> B
+  backward : (B) -> A
+}
+pub fn[A, B] HalfAdjointEquiv::ua_transport_endo_iter(Self[A, B], (B) -> B, Int, A) -> A
+pub fn[A : Eq, B : Eq] HalfAdjointEquiv::verify_coherence(Self[A, B], FixedArray[A], FixedArray[B]) -> Bool
+
+pub struct IntervalPt(Int) derive(Eq, @debug.Debug)
+pub fn IntervalPt::equal(Self, Self) -> Bool
+pub fn IntervalPt::inv(Self) -> Self
+pub fn IntervalPt::join(Self, Self) -> Self
+pub fn IntervalPt::meet(Self, Self) -> Self
+pub fn IntervalPt::not_equal(Self, Self) -> Bool
+pub fn IntervalPt::one() -> Self
+pub fn IntervalPt::to_repr(Self) -> @debug.Repr
+pub fn IntervalPt::zero() -> Self
+
+// Type aliases
+
+// Traits

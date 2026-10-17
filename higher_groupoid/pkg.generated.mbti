@@ -1,0 +1,61 @@
+// Generated using `moon info`, DON'T EDIT IT
+package "username/higher_cat_alg/higher_groupoid"
+
+import {
+  "moonbitlang/core/debug",
+}
+
+// Values
+pub fn compute_surface_2holonomy(Int, Int, FixedArray[DihedralGauge], FixedArray[DihedralGauge]) -> (TwoGroupCell, TwoGroupCell)
+
+pub fn verify_2group_interchange(TwoGroupCell, TwoGroupCell, DihedralGauge, DihedralGauge) -> (TwoGroupCell, TwoGroupCell)
+
+pub fn verify_action_groupoid_cardinality(Int, Int, (Int, Int) -> Int) -> (Int, Int, Int)
+
+pub fn verify_crossed_module_axioms(DihedralGauge, DihedralGauge, DihedralGauge) -> Bool
+
+// Errors
+
+// Types and methods
+pub(all) struct DihedralGauge {
+  rot : Int
+  refl : Int
+  modulus : Int
+} derive(Eq, @debug.Debug)
+pub fn DihedralGauge::conjugate_by(Self, Self) -> Self
+pub fn DihedralGauge::equal(Self, Self) -> Bool
+pub fn DihedralGauge::id(Int) -> Self
+pub fn DihedralGauge::inv(Self) -> Self
+pub fn DihedralGauge::mul(Self, Self) -> Self
+pub fn DihedralGauge::new(Int, Int, Int) -> Self
+pub fn DihedralGauge::not_equal(Self, Self) -> Bool
+pub fn DihedralGauge::to_repr(Self) -> @debug.Repr
+
+pub(all) struct FundamentalGroupoidUF {
+  num_objects : Int
+  modulus : Int
+  parent : FixedArray[Int]
+  potential : FixedArray[DihedralGauge]
+}
+pub fn FundamentalGroupoidUF::add_reversible_morphism(Self, Int, Int, DihedralGauge) -> Bool
+pub fn FundamentalGroupoidUF::find_with_potential(Self, Int) -> (Int, DihedralGauge)
+pub fn FundamentalGroupoidUF::new(Int, Int) -> Self
+pub fn FundamentalGroupoidUF::parallel_transport(Self, Int, Int) -> DihedralGauge?
+
+pub(all) struct TwoGroupCell {
+  surface_e : DihedralGauge
+  source_g : DihedralGauge
+} derive(Eq, @debug.Debug)
+pub fn TwoGroupCell::boundary(DihedralGauge) -> DihedralGauge
+pub fn TwoGroupCell::compose_horizontal(Self, Self) -> Self
+pub fn TwoGroupCell::compose_vertical(Self, Self) -> Self
+pub fn TwoGroupCell::crossed_action(DihedralGauge, DihedralGauge) -> DihedralGauge
+pub fn TwoGroupCell::equal(Self, Self) -> Bool
+pub fn TwoGroupCell::not_equal(Self, Self) -> Bool
+pub fn TwoGroupCell::stack_above(Self, DihedralGauge) -> Self
+pub fn TwoGroupCell::target_1morphism(Self) -> DihedralGauge
+pub fn TwoGroupCell::to_repr(Self) -> @debug.Repr
+
+// Type aliases
+
+// Traits
